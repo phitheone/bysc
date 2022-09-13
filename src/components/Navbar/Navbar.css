@@ -1,0 +1,375 @@
+.NBSuper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  background-color: rgba(0, 0, 0, 1);
+  position: sticky;
+  top: 0;
+  z-index: 150;
+  border-bottom: solid var(--color2) 4px;
+
+  /* border: solid greenyellow 1px; */
+}
+
+.NBContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  width: 80%;
+
+  /* border: solid greenyellow 1px; */
+}
+
+/*.Logo {}*/
+
+.Logo img {
+  height: 130px;
+  margin-left: 30px;
+  margin-right: 30px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.Logo img:hover {
+  transform: scale(1.1);
+}
+
+.Links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+
+  /* border: solid greenyellow 1px; */
+}
+
+.NavLink {
+  border-bottom: solid transparent 3px;
+}
+
+.NavLink img {
+  height: 50px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+
+.PNavLink img {
+  height: 50px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 22px;
+  cursor: pointer;
+}
+
+.NavLink img:hover {
+  margin-left: 12px;
+  margin-right: 12px;
+  transform: scale(1.1);
+  animation: tiktak 1s linear infinite;
+}
+
+@keyframes tiktak {
+  0% {
+    rotate: 7deg;
+  }
+  49% {
+    rotate: 7deg;
+  }
+  50% {
+    rotate: -7deg;
+  }
+  99% {
+    rotate: -7deg;
+  }
+}
+
+@keyframes tiktak2 {
+  0% {
+    rotate: -38deg;
+  }
+  49% {
+    rotate: -38deg;
+  }
+  50% {
+    rotate: -52deg;
+  }
+  99% {
+    rotate: -52deg;
+  }
+}
+
+.NavLink p {
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.NavLink .active Link {
+  border-bottom: solid var(--color2) 3px;
+}
+
+.NavLink .active p {
+  color: var(--color3);
+  text-shadow: 0 0 7px var(--color2), 0 0 15px var(--color2);
+}
+
+.NavLink p:hover {
+  color: var(--color3);
+  text-shadow: 0 0 7px var(--color2), 0 0 15px var(--color2);
+}
+
+.NBButtons {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+  height: 230px;
+  bottom: 100px;
+  right: 40px;
+
+  /* border: 1px solid rgb(255, 47, 217); */
+}
+
+.NBButtons img {
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+  /* margin-right: 15px; */
+  /* margin-left: 15px; */
+}
+
+.NBButtons img:hover {
+  filter: invert(100%);
+  transform: scale(1.1);
+  animation: tiktak 1s linear infinite;
+}
+
+.MintBtn img {
+  height: 70px;
+  rotate: -45deg;
+  cursor: pointer;
+  animation: glowy 1s linear infinite;
+}
+
+.MintBtn img:hover {
+  rotate: -45deg;
+  animation: tiktak2 1s linear infinite;
+}
+
+@keyframes glowy {
+  0% {
+    box-shadow: 0 0 15px var(--color2);
+  }
+}
+
+.NBBuyButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--color1);
+  border: solid var(--color2) 2px;
+  border-radius: 10px;
+  padding: 10px 10px;
+  /* margin-right: 15px; */
+  color: var(--color2);
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.NBBuyButton:hover {
+  background: var(--color2);
+  border: solid var(--color1) 2px;
+  color: var(--color1);
+  animation: tiktak 1s linear infinite;
+  transform: scale(1.1);
+}
+
+.MovilBtn {
+  position: fixed;
+  width: 0%;
+  min-width: 0px;
+  pointer-events: none;
+  opacity: 0;
+  right: 40px;
+
+  /* border: 1px solid rgb(255, 47, 217); */
+}
+
+.MovilBtn img {
+  width: 0px;
+}
+
+/*=============Media Queries=============*/
+
+@media screen and (max-width: 1025px) {
+  .MovilBtn {
+    /* position: absolute; */
+    width: 40px;
+    pointer-events: auto;
+    opacity: 1;
+    right: 40px;
+
+    /* border: 1px solid rgb(255, 47, 217); */
+  }
+
+  .NavLink img {
+    height: 0px;
+    width: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    pointer-events: none;
+  }
+
+  .MovilBtn img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .Links {
+    pointer-events: none;
+    opacity: 0;
+    width: 0px;
+    min-width: 0px;
+  }
+
+  .NavLink img {
+    height: 70px;
+  }
+
+  .NBButtons {
+    right: 20px;
+    bottom: 30px;
+    opacity: 1;
+    height: 160px;
+  }
+
+  .NBBuyButton {
+    font-size: 0px;
+  }
+
+  .NBButtons img {
+    /* width: 100px; */
+    height: 40px;
+    margin: 0px;
+  }
+}
+
+/*============Panel Movil============*/
+
+.NavPanel-Closed {
+  position: absolute;
+  top: 90px;
+  width: 20%;
+  left: 40%;
+  background: var(--color2);
+  opacity: 0;
+  pointer-events: none;
+  border: solid 4px var(--color2);
+  /* border-radius: 10px; */
+  box-shadow: inset 0 0 20px white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15% 0%;
+}
+
+.NavPanel-Open {
+  position: absolute;
+  top: 150px;
+  width: 90%;
+  left: 4%;
+  background: var(--color1);
+  opacity: 0;
+  pointer-events: none;
+  border: solid 4px var(--color1);
+  /* border-radius: 10px; */
+  box-shadow: inset 0 0 20px white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5% 0%;
+}
+
+.NavPanel-Open p {
+  color: var(--color2);
+}
+
+.PLogo img {
+  width: 250px;
+}
+
+.PNavBuyBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--color3);
+  border: solid var(--color1) 2px;
+  border-radius: 10px;
+  padding: 10px 10px;
+  /* margin-right: 15px; */
+  color: var(--color1);
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.PNavBuyBtn:hover {
+  background: var(--color1);
+  border: solid var(--color3) 2px;
+  color: var(--color3);
+}
+
+.PNavButtons {
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1025px) {
+  .NavPanel-Closed {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  .NavPanel-Open {
+    opacity: 1;
+    pointer-events: auto;
+    transition: 0.3s ease-in-out;
+  }
+}
+
+.PanelLinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 0%;
+  padding-bottom: 10%;
+}
+
+.PanelSocials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 140px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
